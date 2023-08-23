@@ -16,7 +16,7 @@ bt = mean(pu(:,5))/1;
 ct = mean(pu(:,6))/1;
 dt = mean(pu(:,7))/1;
 et = mean(pu(:,8))/1;
-thresold = xt^2 + yt^2+zt^2+at^2+bt^2+ct^2+dt^2+et^2;
+threshold = xt^2 + yt^2+zt^2+at^2+bt^2+ct^2+dt^2+et^2;
 for i = 1:(length(p(:,1))-1)
     con = [];
     for j = i+1:length(p(:,1))
@@ -29,7 +29,7 @@ for i = 1:(length(p(:,1))-1)
         d = abs(p(i,8)- p(j,8));
         e = abs(p(i,9)- p(j,9));
         dis = x^2 + y^2 + z^2 + a^2 + b^2 + c^2 + d^2 + e^2;        
-        if x < xt && y < yt && z < zt && a < at && b < bt && c < ct && d < dt && e < et  && dis < thresold
+        if x < xt && y < yt && z < zt && a < at && b < bt && c < ct && d < dt && e < et  && dis < threshold
             con1 = [p(i,1) p(j,1) sqrt(dis)];
             con = [con;con1];
         end
